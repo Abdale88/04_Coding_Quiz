@@ -2,6 +2,18 @@ body{
     background-color: rgb(235, 232, 230);
 }
 
+.time, .timer-text{
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    justify-content: flex-end;
+    
+    margin-right: 7rem;
+    padding-right: 3rem;
+    margin-left: 64rem;
+    border-radius: 6px;
+}
+
 .p-text, .start-btn{
     text-align: center;
 }
@@ -10,15 +22,6 @@ body{
   background-color: blueviolet;
   padding: 0.5rem;
   border: black 3px solid;
-}
-
-.timer-text{
-    text-align: right;
-    margin-right: 3rem;
-    border: sienna 2px solid; 
-    margin-left: 70rem;
-    background-color: blueviolet;
-    padding-right: 2rem;
 }
 
 .score-text{
