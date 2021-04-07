@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(235, 232, 230);
+}
+
+.p-text, .start-btn{
+    text-align: center;
+}
+
+.start-btn > button{
+  background-color: blueviolet;
+  padding: 0.5rem;
+  border: black 3px solid;
+}
+
+.timer-text{
+    text-align: right;
+    margin-right: 3rem;
+    border: sienna 2px solid; 
+    margin-left: 70rem;
+    background-color: blueviolet;
+    padding-right: 2rem;
+}
+
+.score-text{
+    border: sienna 2px solid; 
+    margin-right: 70rem;
+    padding-left: 2rem;
+    background-color: blueviolet;
+}
