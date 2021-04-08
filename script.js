@@ -20,6 +20,8 @@ stringValue.textContent = "String value must be enclosed within ____ when  being
 consoleLog.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
 //====
 
+var listEl = document.createElement("ol");
+var list = document.createElement("il");
 
 
 
@@ -32,7 +34,6 @@ var liItems = ["strings", "booleans", "alert", "numbers",
 var randomList = liItems[Math.floor(Math.random() * liItems.length)];
 
 list.textContent = "1: " + randomList;
-
 
 function startButton(){
     startBtn.addEventListener("click", function(){
