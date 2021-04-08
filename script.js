@@ -78,7 +78,7 @@ function startButton(){
             if(timerCount > 0){
                 timerCount--;
             timerEl.textContent = timerCount;
-            
+            dataFunc();
             }
             else if(timerCount === 0){
                 curlyBracketsFunc();
@@ -92,3 +92,29 @@ function startButton(){
      startButton();
 
 
+function dataFunc(){
+    
+    body.appendChild(dataType);
+    dataType.appendChild(orderEl);
+    dataBtn1.textContent = "strings";
+    dataBtn2.textContent = "booleans";
+    dataBtn3.textContent = "numbers";
+    dataBtn4.textContent = "alert";
+
+   orderEl.appendChild(liCurly1);
+   orderEl.appendChild(liCurly2);
+   orderEl.appendChild(liCurly3);
+   orderEl.appendChild(liCurly4);
+
+   liCurly1.appendChild(dataBtn1);
+   liCurly2.appendChild(dataBtn2);
+   liCurly3.appendChild(dataBtn3);
+   liCurly4.appendChild(dataBtn4);
+
+dataType.setAttribute("style", "margin-left: 35rem;"); 
+}
+
+
+
+// here you go
+// HTMLIFrameElement
