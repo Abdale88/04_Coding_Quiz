@@ -20,8 +20,11 @@ stringValue.textContent = "String value must be enclosed within ____ when  being
 consoleLog.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
 
 // each of these order lists is for the five questions
-var orderEl = document.createElement("ol");
-var oderElCurly = document.createElement("ol");
+var orderDataEl = document.createElement("ol");
+var orderElCurly = document.createElement("ol");
+var orderJavaArrayEl = document.createElement("ol");
+var orderStringValueEl = document.createElement("ol");
+var orderConsoleLogEl = document.createElement("ol");
 
 // buttons for first question
 var dataBtn1 = document.createElement("button");
@@ -41,7 +44,7 @@ var javaArrayBtn2 = document.createElement("button");
 var javaArrayBtn3 = document.createElement("button");
 var javaArrayBtn4 = document.createElement("button");
 
-// buttons for four question
+// buttons for fourth question
 var stringValueBtn1 = document.createElement("button");
 var stringValueBtn2 = document.createElement("button");
 var stringValueBtn3 = document.createElement("button");
@@ -53,22 +56,39 @@ var consoleLogBtn2 = document.createElement("button");
 var consoleLogBtn3 = document.createElement("button");
 var consoleLogBtn4 = document.createElement("button");
 
+// list for the first question
 var dataLi1 = document.createElement("li");
 var dataLi2 = document.createElement("li");
 var dataLi3 = document.createElement("li");
 var dataLi4 = document.createElement("li");
 
+// list for the second question
 var liCurly1 = document.createElement("li");
 var liCurly2 = document.createElement("li");
 var liCurly3 = document.createElement("li");
 var liCurly4 = document.createElement("li");
 
+// list for the third question
+var liJavaArray1 = document.createElement("li");
+var liJavaArray2 = document.createElement("li");
+var liJavaArray3 = document.createElement("li");
+var liJavaArray4 = document.createElement("li");
+
+// list for the fourth question
+var liStringValue1 = document.createElement("li");
+var liStringValue2 = document.createElement("li");
+var liStringValue3 = document.createElement("li");
+var liStringValue4 = document.createElement("li");
+
+// list for the fifth question
+var liConsoleLog1 = document.createElement("li");
+var liConsoleLog2 = document.createElement("li");
+var liConsoleLog3 = document.createElement("li");
+var liConsoleLog4 = document.createElement("li");
+
 
    
 
-
-
-// list.textContent = "1: " + randomList;
 
 function startButton(){
     startBtn.addEventListener("click", function(){
@@ -96,21 +116,21 @@ function startButton(){
 function dataFunc(){
     
     body.appendChild(dataType);
-    dataType.appendChild(orderEl);
+    dataType.appendChild(orderDataEl);
     dataBtn1.textContent = "strings";
     dataBtn2.textContent = "booleans";
     dataBtn3.textContent = "numbers";
     dataBtn4.textContent = "alert";
 
-   orderEl.appendChild(liCurly1);
-   orderEl.appendChild(liCurly2);
-   orderEl.appendChild(liCurly3);
-   orderEl.appendChild(liCurly4);
+    orderDataEl.appendChild(dataLi1);
+    orderDataEl.appendChild(dataLi2);
+    orderDataEl.appendChild(dataLi3);
+    orderDataEl.appendChild(dataLi4);
 
-   liCurly1.appendChild(dataBtn1);
-   liCurly2.appendChild(dataBtn2);
-   liCurly3.appendChild(dataBtn3);
-   liCurly4.appendChild(dataBtn4);
+   dataLi1.appendChild(dataBtn1);
+   dataLi2.appendChild(dataBtn2);
+   dataLi3.appendChild(dataBtn3);
+   dataLi4.appendChild(dataBtn4);
 
 dataType.setAttribute("style", "margin-left: 35rem;"); 
 }
@@ -126,15 +146,17 @@ function curlyBracketsFunc(){
    curlyBtn3.textContent = "numbers";
    curlyBtn4.textContent = "something";
 
-   oderElCurly.appendChild(li);
-   oderElCurly.appendChild(li2);
-   oderElCurly.appendChild(li3);
-   oderElCurly.appendChild(li4);
+   oderElCurly.appendChild(liCurly1);
+   oderElCurly.appendChild(liCurly2);
+   oderElCurly.appendChild(liCurly3);
+   oderElCurly.appendChild(liCurly4);
 
-li.appendChild(curlyBtn1);
-li2.appendChild(curlyBtn2);
-li3.appendChild(curlyBtn3);
-li4.appendChild(curlyBtn4);
+   liCurly1.appendChild(curlyBtn1);
+   liCurly2.appendChild(curlyBtn2);
+   liCurly3.appendChild(curlyBtn3);
+   liCurly4.appendChild(curlyBtn4);
 
 curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
 }
+
+
