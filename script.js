@@ -100,9 +100,10 @@ function startButton(){
             timerEl.textContent = timerCount;
             dataFunc();
             curlyBracketsFunc();
+            javaArrayFunc()
+            
             }
             else if(timerCount === 0){
-                curlyBracketsFunc();
                 clearInterval(timer);
             }
     
@@ -136,20 +137,18 @@ dataType.setAttribute("style", "margin-left: 35rem;");
 }
 
 function curlyBracketsFunc(){
-    
-
     body.appendChild(curlyBrackets);
-   curlyBrackets.appendChild(oderElCurly);
+   curlyBrackets.appendChild(orderElCurly);
 
    curlyBtn1.textContent = "parentheses";
    curlyBtn2.textContent = "Arrays";
    curlyBtn3.textContent = "numbers";
    curlyBtn4.textContent = "something";
 
-   oderElCurly.appendChild(liCurly1);
-   oderElCurly.appendChild(liCurly2);
-   oderElCurly.appendChild(liCurly3);
-   oderElCurly.appendChild(liCurly4);
+   orderElCurly.appendChild(liCurly1);
+   orderElCurly.appendChild(liCurly2);
+   orderElCurly.appendChild(liCurly3);
+   orderElCurly.appendChild(liCurly4);
 
    liCurly1.appendChild(curlyBtn1);
    liCurly2.appendChild(curlyBtn2);
@@ -159,4 +158,26 @@ function curlyBracketsFunc(){
 curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
 }
 
+
+function javaArrayFunc(){
+    body.appendChild(javaArray);
+    javaArray.appendChild(orderJavaArrayEl);
+ 
+    javaArrayBtn1.textContent = "test1";
+    javaArrayBtn2.textContent = "test2";
+    javaArrayBtn3.textContent = "test3";
+    javaArrayBtn4.textContent = "test4";
+ 
+    orderJavaArrayEl.appendChild(liJavaArray1);
+    orderJavaArrayEl.appendChild(liJavaArray2);
+    orderJavaArrayEl.appendChild(liJavaArray3);
+    orderJavaArrayEl.appendChild(liJavaArray4);
+ 
+    liJavaArray1.appendChild(javaArrayBtn1);
+    liJavaArray2.appendChild(javaArrayBtn2);
+    liJavaArray3.appendChild(javaArrayBtn3);
+    liJavaArray4.appendChild(javaArrayBtn4);
+ 
+    javaArray.setAttribute("style", "margin-left: 35rem;");
+}
 
