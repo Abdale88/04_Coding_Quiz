@@ -101,6 +101,8 @@ function startButton(){
             dataFunc();
             curlyBracketsFunc();
             javaArrayFunc()
+            StringValueFunc()
+            consoleLogFunc()
             
             }
             else if(timerCount === 0){
@@ -113,7 +115,7 @@ function startButton(){
     
      startButton();
 
-
+// function for the first question
 function dataFunc(){
     
     body.appendChild(dataType);
@@ -136,6 +138,7 @@ function dataFunc(){
 dataType.setAttribute("style", "margin-left: 35rem;"); 
 }
 
+// function for the second question
 function curlyBracketsFunc(){
     body.appendChild(curlyBrackets);
    curlyBrackets.appendChild(orderElCurly);
@@ -158,7 +161,7 @@ function curlyBracketsFunc(){
 curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
 }
 
-
+// function for the third question
 function javaArrayFunc(){
     body.appendChild(javaArray);
     javaArray.appendChild(orderJavaArrayEl);
@@ -181,3 +184,48 @@ function javaArrayFunc(){
     javaArray.setAttribute("style", "margin-left: 35rem;");
 }
 
+// function for the fourth question
+function StringValueFunc(){
+    body.appendChild(stringValue);
+    stringValue.appendChild(orderStringValueEl);
+ 
+    stringValueBtn1.textContent = "hello1";
+    stringValueBtn2.textContent = "hello2";
+    stringValueBtn3.textContent = "hello3";
+    stringValueBtn4.textContent = "hello4";
+ 
+    orderStringValueEl.appendChild(liStringValue1);
+    orderStringValueEl.appendChild(liStringValue2);
+    orderStringValueEl.appendChild(liStringValue3);
+    orderStringValueEl.appendChild(liStringValue4);
+ 
+    liStringValue1.appendChild(stringValueBtn1);
+    liStringValue2.appendChild(stringValueBtn2);
+    liStringValue3.appendChild(stringValueBtn3);
+    liStringValue4.appendChild(stringValueBtn4);
+ 
+    stringValue.setAttribute("style", "margin-left: 35rem;");
+}
+
+// function for the fifth question
+function consoleLogFunc(){
+    body.appendChild(consoleLog);
+    consoleLog.appendChild(orderConsoleLogEl);
+ 
+    consoleLogBtn1.textContent = "final1";
+    consoleLogBtn2.textContent = "final2";
+    consoleLogBtn3.textContent = "final3";
+    consoleLogBtn4.textContent = "final4";
+ 
+    orderConsoleLogEl.appendChild(liConsoleLog1);
+    orderConsoleLogEl.appendChild(liConsoleLog2);
+    orderConsoleLogEl.appendChild(liConsoleLog3);
+    orderConsoleLogEl.appendChild(liConsoleLog4);
+ 
+    liConsoleLog1.appendChild(consoleLogBtn1);
+    liConsoleLog2.appendChild(consoleLogBtn2);
+    liConsoleLog3.appendChild(consoleLogBtn3);
+    liConsoleLog4.appendChild(consoleLogBtn4);
+ 
+    consoleLog.setAttribute("style", "margin-left: 35rem;");
+}
