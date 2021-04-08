@@ -3,7 +3,7 @@ var timerEl = document.querySelector(".time");
 var startBtn = document.querySelector(".start-btn");
 
 
-var timerCount = 0
+var timerCount = 3
 var timer;
 
 var body = document.body;
@@ -18,34 +18,77 @@ curlyBrackets.textContent  = "The condition in an if/else statement is enclosed 
 javaArray.textContent = "Arrays in JavaScript can be used to store_____.";
 stringValue.textContent = "String value must be enclosed within ____ when  being assigned to variable.";
 consoleLog.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
-//====
 
-var listEl = document.createElement("ol");
-var list = document.createElement("il");
+// each of these order lists is for the five questions
+var orderEl = document.createElement("ol");
+var oderElCurly = document.createElement("ol");
+
+// buttons for first question
+var dataBtn1 = document.createElement("button");
+var dataBtn2 = document.createElement("button");
+var dataBtn3 = document.createElement("button");
+var dataBtn4 = document.createElement("button");
+
+// buttons for second question
+var curlyBtn1 = document.createElement("button");
+var curlyBtn2 = document.createElement("button");
+var curlyBtn3 = document.createElement("button");
+var curlyBtn4 = document.createElement("button");
+
+// buttons for third question
+var javaArrayBtn1 = document.createElement("button");
+var javaArrayBtn2 = document.createElement("button");
+var javaArrayBtn3 = document.createElement("button");
+var javaArrayBtn4 = document.createElement("button");
+
+// buttons for four question
+var stringValueBtn1 = document.createElement("button");
+var stringValueBtn2 = document.createElement("button");
+var stringValueBtn3 = document.createElement("button");
+var stringValueBtn4 = document.createElement("button");
+
+// buttons for fifth question
+var consoleLogBtn1 = document.createElement("button");
+var consoleLogBtn2 = document.createElement("button");
+var consoleLogBtn3 = document.createElement("button");
+var consoleLogBtn4 = document.createElement("button");
+
+var dataLi1 = document.createElement("li");
+var dataLi2 = document.createElement("li");
+var dataLi3 = document.createElement("li");
+var dataLi4 = document.createElement("li");
+
+var liCurly1 = document.createElement("li");
+var liCurly2 = document.createElement("li");
+var liCurly3 = document.createElement("li");
+var liCurly4 = document.createElement("li");
+
+
+   
 
 
 
-var liItems = ["strings", "booleans", "alert", "numbers", 
-              "quotes", "curly brackets", "parentheses", 
-              "square brackets", "numbers and strings", 
-              "other Arrays", "all of the above", "commas", 
-              "javaScript", "terminal/bash", "for loops", "console.log"
-            ];
-var randomList = liItems[Math.floor(Math.random() * liItems.length)];
-
-list.textContent = "1: " + randomList;
+// list.textContent = "1: " + randomList;
 
 function startButton(){
     startBtn.addEventListener("click", function(){
         
         timer = setInterval(function(){
-            timerCount--;
+
+            if(timerCount > 0){
+                timerCount--;
             timerEl.textContent = timerCount;
+            
+            }
+            else if(timerCount === 0){
+                curlyBracketsFunc();
+                clearInterval(timer);
+            }
     
         }, 1000)
-     
      });
     }
-    // function countDown(){}
     
      startButton();
+
+
