@@ -79,6 +79,7 @@ function startButton(){
                 timerCount--;
             timerEl.textContent = timerCount;
             dataFunc();
+            curlyBracketsFunc();
             }
             else if(timerCount === 0){
                 curlyBracketsFunc();
@@ -114,7 +115,26 @@ function dataFunc(){
 dataType.setAttribute("style", "margin-left: 35rem;"); 
 }
 
+function curlyBracketsFunc(){
+    
 
+    body.appendChild(curlyBrackets);
+   curlyBrackets.appendChild(oderElCurly);
 
-// here you go
-// HTMLIFrameElement
+   curlyBtn1.textContent = "parentheses";
+   curlyBtn2.textContent = "Arrays";
+   curlyBtn3.textContent = "numbers";
+   curlyBtn4.textContent = "something";
+
+   oderElCurly.appendChild(li);
+   oderElCurly.appendChild(li2);
+   oderElCurly.appendChild(li3);
+   oderElCurly.appendChild(li4);
+
+li.appendChild(curlyBtn1);
+li2.appendChild(curlyBtn2);
+li3.appendChild(curlyBtn3);
+li4.appendChild(curlyBtn4);
+
+curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
+}
