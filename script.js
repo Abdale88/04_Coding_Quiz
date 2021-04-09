@@ -3,7 +3,7 @@ var timerEl = document.querySelector(".time");
 var startBtn = document.querySelector(".start-btn");
 
 
-var timerCount = 3
+var timerCount = 10
 var timer;
 
 var body = document.body;
@@ -13,11 +13,23 @@ var javaArray = document.createElement("div");
 var stringValue = document.createElement("div");
 var consoleLog = document.createElement("div");
 
+
+
 dataType.textContent = "commonly used data types DO NOT include:";
 curlyBrackets.textContent  = "The condition in an if/else statement is enclosed within____.";
 javaArray.textContent = "Arrays in JavaScript can be used to store_____.";
 stringValue.textContent = "String value must be enclosed within ____ when  being assigned to variable.";
 consoleLog.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
+
+       
+var correctAnswer = document.createElement("div");
+var wrongAnswer = document.createElement("div");
+
+var userChoice = "string";
+body.appendChild(correctAnswer);
+body.appendChild(wrongAnswer);
+
+
 
 // each of these order lists is for the five questions
 var orderDataEl = document.createElement("ol");
@@ -26,35 +38,6 @@ var orderJavaArrayEl = document.createElement("ol");
 var orderStringValueEl = document.createElement("ol");
 var orderConsoleLogEl = document.createElement("ol");
 
-// buttons for first question
-var dataBtn1 = document.createElement("button");
-var dataBtn2 = document.createElement("button");
-var dataBtn3 = document.createElement("button");
-var dataBtn4 = document.createElement("button");
-
-// buttons for second question
-var curlyBtn1 = document.createElement("button");
-var curlyBtn2 = document.createElement("button");
-var curlyBtn3 = document.createElement("button");
-var curlyBtn4 = document.createElement("button");
-
-// buttons for third question
-var javaArrayBtn1 = document.createElement("button");
-var javaArrayBtn2 = document.createElement("button");
-var javaArrayBtn3 = document.createElement("button");
-var javaArrayBtn4 = document.createElement("button");
-
-// buttons for fourth question
-var stringValueBtn1 = document.createElement("button");
-var stringValueBtn2 = document.createElement("button");
-var stringValueBtn3 = document.createElement("button");
-var stringValueBtn4 = document.createElement("button");
-
-// buttons for fifth question
-var consoleLogBtn1 = document.createElement("button");
-var consoleLogBtn2 = document.createElement("button");
-var consoleLogBtn3 = document.createElement("button");
-var consoleLogBtn4 = document.createElement("button");
 
 // list for the first question
 var dataLi1 = document.createElement("li");
@@ -87,23 +70,127 @@ var liConsoleLog3 = document.createElement("li");
 var liConsoleLog4 = document.createElement("li");
 
 
-   
+
+
+// function for the first question
+function dataFunc(){
+    
+    body.appendChild(dataType);
+    dataType.appendChild(orderDataEl);
+
+    dataLi1.textContent = "strings";
+    dataLi2.textContent = "booleans";
+    dataLi3.textContent = "alert true";
+    dataLi4.textContent = "numbers";
+
+    orderDataEl.appendChild(dataLi1);
+    orderDataEl.appendChild(dataLi2);
+    orderDataEl.appendChild(dataLi3);
+    orderDataEl.appendChild(dataLi4);
+
+dataType.setAttribute("style", "margin-left: 35rem;"); 
+}
+
+// function for the second question
+function curlyBracketsFunc(){
+    body.appendChild(curlyBrackets);
+   curlyBrackets.appendChild(orderElCurly);
+
+   liCurly1.textContent = "quotes";
+   liCurly2.textContent = "curly brackets";
+   liCurly3.textContent = "parentheses";
+   liCurly4.textContent = "square brackets true";
+
+   orderElCurly.appendChild(liCurly1);
+   orderElCurly.appendChild(liCurly2);
+   orderElCurly.appendChild(liCurly3);
+   orderElCurly.appendChild(liCurly4);
+
+curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
+}
+
+// function for the third question
+function javaArrayFunc(){
+    body.appendChild(javaArray);
+    javaArray.appendChild(orderJavaArrayEl);
+ 
+    liJavaArray1.textContent = "numbers and strings";
+    liJavaArray2.textContent = "other arrays";
+    liJavaArray3.textContent = "booleans";
+    liJavaArray4.textContent = "all of the above true";
+ 
+    orderJavaArrayEl.appendChild(liJavaArray1);
+    orderJavaArrayEl.appendChild(liJavaArray2);
+    orderJavaArrayEl.appendChild(liJavaArray3);
+    orderJavaArrayEl.appendChild(liJavaArray4);
+ 
+    javaArray.setAttribute("style", "margin-left: 35rem;");
+}
+
+// function for the fourth question
+function StringValueFunc(){
+    body.appendChild(stringValue);
+    stringValue.appendChild(orderStringValueEl);
+ 
+    liStringValue1.textContent = "commas";
+    liStringValue1.textContent = "curly brackets";
+    liStringValue1.textContent = "quote true";
+    liStringValue1.textContent = "parentheses";
+ 
+    orderStringValueEl.appendChild(liStringValue1);
+    orderStringValueEl.appendChild(liStringValue2);
+    orderStringValueEl.appendChild(liStringValue3);
+    orderStringValueEl.appendChild(liStringValue4);
+ 
+    stringValue.setAttribute("style", "margin-left: 35rem;");
+}
+
+// function for the fifth question
+function consoleLogFunc(){
+    body.appendChild(consoleLog);
+    consoleLog.appendChild(orderConsoleLogEl);
+ 
+    liConsoleLog1.textContent = "javaScript";
+    liConsoleLog2.textContent = "terminal/bash";
+    liConsoleLog3.textContent = "for loops";
+    liConsoleLog4.textContent = "console.log true";
+ 
+    orderConsoleLogEl.appendChild(liConsoleLog1);
+    orderConsoleLogEl.appendChild(liConsoleLog2);
+    orderConsoleLogEl.appendChild(liConsoleLog3);
+    orderConsoleLogEl.appendChild(liConsoleLog4);
+ 
+ 
+    consoleLog.setAttribute("style", "margin-left: 35rem;");
+    consoleLogBtn1.setAttribute("style", "background-color: red;")
+}
 
 
 function startButton(){
     startBtn.addEventListener("click", function(){
         
         timer = setInterval(function(){
+            
 
             if(timerCount > 0){
                 timerCount--;
             timerEl.textContent = timerCount;
             dataFunc();
-            curlyBracketsFunc();
-            javaArrayFunc()
-            StringValueFunc()
-            consoleLogFunc()
-            
+            dataLi1.addEventListener("click", function(){
+                if(timerCount > 0){
+                    correctAnswer.textContent = "correct true";
+
+                    dataLi1.setAttribute("style", "background-color: red;");
+ 
+                }
+                else{
+                    wrongAnswer.textContent = "wrong weeye";
+                }
+            })
+            // curlyBracketsFunc();
+            // javaArrayFunc()
+            // StringValueFunc()
+            // consoleLogFunc()
             }
             else if(timerCount === 0){
                 clearInterval(timer);
@@ -114,118 +201,3 @@ function startButton(){
     }
     
      startButton();
-
-// function for the first question
-function dataFunc(){
-    
-    body.appendChild(dataType);
-    dataType.appendChild(orderDataEl);
-    dataBtn1.textContent = "strings";
-    dataBtn2.textContent = "booleans";
-    dataBtn3.textContent = "numbers";
-    dataBtn4.textContent = "alert";
-
-    orderDataEl.appendChild(dataLi1);
-    orderDataEl.appendChild(dataLi2);
-    orderDataEl.appendChild(dataLi3);
-    orderDataEl.appendChild(dataLi4);
-
-   dataLi1.appendChild(dataBtn1);
-   dataLi2.appendChild(dataBtn2);
-   dataLi3.appendChild(dataBtn3);
-   dataLi4.appendChild(dataBtn4);
-
-dataType.setAttribute("style", "margin-left: 35rem;"); 
-}
-
-// function for the second question
-function curlyBracketsFunc(){
-    body.appendChild(curlyBrackets);
-   curlyBrackets.appendChild(orderElCurly);
-
-   curlyBtn1.textContent = "parentheses";
-   curlyBtn2.textContent = "Arrays";
-   curlyBtn3.textContent = "numbers";
-   curlyBtn4.textContent = "something";
-
-   orderElCurly.appendChild(liCurly1);
-   orderElCurly.appendChild(liCurly2);
-   orderElCurly.appendChild(liCurly3);
-   orderElCurly.appendChild(liCurly4);
-
-   liCurly1.appendChild(curlyBtn1);
-   liCurly2.appendChild(curlyBtn2);
-   liCurly3.appendChild(curlyBtn3);
-   liCurly4.appendChild(curlyBtn4);
-
-curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
-}
-
-// function for the third question
-function javaArrayFunc(){
-    body.appendChild(javaArray);
-    javaArray.appendChild(orderJavaArrayEl);
- 
-    javaArrayBtn1.textContent = "test1";
-    javaArrayBtn2.textContent = "test2";
-    javaArrayBtn3.textContent = "test3";
-    javaArrayBtn4.textContent = "test4";
- 
-    orderJavaArrayEl.appendChild(liJavaArray1);
-    orderJavaArrayEl.appendChild(liJavaArray2);
-    orderJavaArrayEl.appendChild(liJavaArray3);
-    orderJavaArrayEl.appendChild(liJavaArray4);
- 
-    liJavaArray1.appendChild(javaArrayBtn1);
-    liJavaArray2.appendChild(javaArrayBtn2);
-    liJavaArray3.appendChild(javaArrayBtn3);
-    liJavaArray4.appendChild(javaArrayBtn4);
- 
-    javaArray.setAttribute("style", "margin-left: 35rem;");
-}
-
-// function for the fourth question
-function StringValueFunc(){
-    body.appendChild(stringValue);
-    stringValue.appendChild(orderStringValueEl);
- 
-    stringValueBtn1.textContent = "hello1";
-    stringValueBtn2.textContent = "hello2";
-    stringValueBtn3.textContent = "hello3";
-    stringValueBtn4.textContent = "hello4";
- 
-    orderStringValueEl.appendChild(liStringValue1);
-    orderStringValueEl.appendChild(liStringValue2);
-    orderStringValueEl.appendChild(liStringValue3);
-    orderStringValueEl.appendChild(liStringValue4);
- 
-    liStringValue1.appendChild(stringValueBtn1);
-    liStringValue2.appendChild(stringValueBtn2);
-    liStringValue3.appendChild(stringValueBtn3);
-    liStringValue4.appendChild(stringValueBtn4);
- 
-    stringValue.setAttribute("style", "margin-left: 35rem;");
-}
-
-// function for the fifth question
-function consoleLogFunc(){
-    body.appendChild(consoleLog);
-    consoleLog.appendChild(orderConsoleLogEl);
- 
-    consoleLogBtn1.textContent = "final1";
-    consoleLogBtn2.textContent = "final2";
-    consoleLogBtn3.textContent = "final3";
-    consoleLogBtn4.textContent = "final4";
- 
-    orderConsoleLogEl.appendChild(liConsoleLog1);
-    orderConsoleLogEl.appendChild(liConsoleLog2);
-    orderConsoleLogEl.appendChild(liConsoleLog3);
-    orderConsoleLogEl.appendChild(liConsoleLog4);
- 
-    liConsoleLog1.appendChild(consoleLogBtn1);
-    liConsoleLog2.appendChild(consoleLogBtn2);
-    liConsoleLog3.appendChild(consoleLogBtn3);
-    liConsoleLog4.appendChild(consoleLogBtn4);
- 
-    consoleLog.setAttribute("style", "margin-left: 35rem;");
-}
