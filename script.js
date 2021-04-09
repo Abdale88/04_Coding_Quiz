@@ -89,6 +89,7 @@ function dataFunc(){
     orderDataEl.appendChild(dataLi4);
 
 dataType.setAttribute("style", "margin-left: 35rem;"); 
+orderDataEl.setAttribute("style", "color: rgb(138, 43, 226);")
 }
 
 // function for the second question
@@ -107,6 +108,7 @@ function curlyBracketsFunc(){
    orderElCurly.appendChild(liCurly4);
 
 curlyBrackets.setAttribute("style", "margin-left: 35rem;"); 
+orderElCurly.setAttribute("style", "color: rgb(138, 43, 226);")
 }
 
 // function for the third question
@@ -125,6 +127,7 @@ function javaArrayFunc(){
     orderJavaArrayEl.appendChild(liJavaArray4);
  
     javaArray.setAttribute("style", "margin-left: 35rem;");
+    orderJavaArrayEl.setAttribute("style", "color: rgb(138, 43, 226);")
 }
 
 // function for the fourth question
@@ -133,9 +136,9 @@ function StringValueFunc(){
     stringValue.appendChild(orderStringValueEl);
  
     liStringValue1.textContent = "commas";
-    liStringValue1.textContent = "curly brackets";
-    liStringValue1.textContent = "quote true";
-    liStringValue1.textContent = "parentheses";
+    liStringValue2.textContent = "curly brackets";
+    liStringValue3.textContent = "quote true";
+    liStringValue4.textContent = "parentheses";
  
     orderStringValueEl.appendChild(liStringValue1);
     orderStringValueEl.appendChild(liStringValue2);
@@ -143,6 +146,7 @@ function StringValueFunc(){
     orderStringValueEl.appendChild(liStringValue4);
  
     stringValue.setAttribute("style", "margin-left: 35rem;");
+    orderStringValueEl.setAttribute("style", "color: rgb(138, 43, 226);")
 }
 
 // function for the fifth question
@@ -162,7 +166,7 @@ function consoleLogFunc(){
  
  
     consoleLog.setAttribute("style", "margin-left: 35rem;");
-    consoleLogBtn1.setAttribute("style", "background-color: red;")
+    orderConsoleLogEl.setAttribute("style", "color: rgb(138, 43, 226);")
 }
 
 
@@ -176,12 +180,14 @@ function startButton(){
                 timerCount--;
             timerEl.textContent = timerCount;
             dataFunc();
+            curlyBracketsFunc();
+            javaArrayFunc()
+            StringValueFunc()
+            consoleLogFunc()
             dataLi1.addEventListener("click", function(){
                 if(timerCount > 0){
                     correctAnswer.textContent = "correct true";
 
-                    dataLi1.setAttribute("style", "background-color: red;");
- 
                 }
                 else{
                     wrongAnswer.textContent = "wrong weeye";

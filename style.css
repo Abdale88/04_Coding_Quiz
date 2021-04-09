@@ -19,7 +19,7 @@ body{
 }
 
 .start-btn > button{
-  background-color: blueviolet;
+  background-color: rgb(138, 43, 226);
   padding: 0.5rem;
   border: black 3px solid;
 }
