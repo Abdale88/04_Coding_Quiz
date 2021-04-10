@@ -7,6 +7,18 @@ var btn2 = document.querySelector(".btn-2");
 var btn3 = document.querySelector(".btn-3");
 var btn4 = document.querySelector(".btn-4");
 
+var body = document.body;
+var myDiv = document.createElement("div");
+var correct = document.createElement("p");
+var wrong = document.createElement("p");
+correct.setAttribute("style", "margin-left: 35rem");
+wrong.setAttribute("style", "margin-left: 35rem");
+
+body.appendChild(myDiv)
+myDiv.appendChild(correct);
+myDiv.appendChild(wrong);
+
+var counter = 76;
 
 var questionEl = document.querySelector(".question");
 
@@ -16,7 +28,7 @@ var arrayBtn = [btn1, btn2, btn3, btn4];
 var dataType = [
     {
     question: "commonly used data types DO NOT include:",
-    userChoices: ["strings", "booleans", "alert", "numbers"],
+    userChoices: ["alert", "booleans", "alert", "numbers"],
     correctChoice: 2,
     },
     {
@@ -56,26 +68,77 @@ function showQuestions(){
     console.log(questionIndex);
     questionIndex += 1;     
 }
-showQuestions();
 
-
-
-// create a function to get and show questions
-//then in the function, we set questionEl.textcontent = datatype[questionIndex].question
-//then create a for loop that loops through arraybtn
-//insde the for loop we set arraybtn[i].textcontent = datatype[questionIndex].userchoice[i]
 
 
 
 
 // function startButton(){
-//     arrayBtn.addEventListener("click", function(){
-        
-       
-//      });
-//     }
+    startBtn.addEventListener("click", showQuestions);
+     startBtn.addEventListener("click", function(){ 
+        var timerInterval = setInterval(function(){
     
-//     startButton();
+            counter--;
+            timerEl.textContent = counter
+            if(counter > 0){
+                
+            }
+            else{
+                clearInterval(timerInterval);
+            }
+            
+
+            btn1.addEventListener("click", showQuestions);
+            if(dataType[questionIndex].userChoices === dataType[questionIndex].correctChoice){
+                correct.textContent = "Correct!";
+            }
+            else{
+                wrong.textContent = "Wrong";
+            }
+
+
+            btn2.addEventListener("click", showQuestions);
+            if(dataType[questionIndex+1].userChoices === dataType[questionIndex+1].correctChoice){
+                correct.textContent = "Correct!";
+                console.log(questionIndex+1);
+            }
+            else{
+                wrong.textContent = "Wrong";
+            }
+
+            btn3.addEventListener("click", showQuestions);
+            if(dataType[questionIndex+2].userChoices === dataType[questionIndex+2].correctChoice){
+                correct.textContent = "Correct!";
+            }
+            else{
+                wrong.textContent = "Wrong";
+            }
+               
+                btn4.addEventListener("click", showQuestions);
+                if(dataType[questionIndex+3].userChoices === dataType[questionIndex+3].correctChoice){
+                    correct.textContent = "Correct!";
+                }
+                else{
+                    wrong.textContent = "Wrong";
+                }
+        }, 1000)
+     });
+   
+
+    // }
+    
+    // startButton();
+
+
+    // for(var i = 0; i < arrayBtn.length; i++){
+    //     if(dataType[i].userChoices === dataType[i].correctChoice){
+    //         document.write("correct");
+    //         btn2.addEventListener("click", showQuestions)
+    //     }
+    //     else if(dataType[i].userChoices !== dataType[i].correctChoice){
+    //         btn2.addEventListener("click", showQuestions)
+    //     }
+    // }
 
 
     // timer = setInterval(function(){
