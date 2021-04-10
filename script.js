@@ -19,6 +19,7 @@ myDiv.appendChild(correct);
 myDiv.appendChild(wrong);
 
 var counter = 10;
+var timerEl;
 
 var questionEl = document.querySelector(".question");
 
@@ -67,6 +68,11 @@ function showQuestions(){
     }  
     questionIndex += 1;     
 }
+btn1.addEventListener("click", showQuestions)
+btn1.addEventListener("click", function(event){
+        console.log(event);  
+    
+})
 
 
 btn1.addEventListener("click", showQuestions);
@@ -78,29 +84,31 @@ btn4.addEventListener("click", showQuestions);
 // function startButton(){
     startBtn.addEventListener("click", showQuestions);
      startBtn.addEventListener("click", function(){ 
-        var timerInterval = setInterval(function(){
+         timerInterval = setInterval(function(){
     
             counter--;
             timerEl.textContent = counter
             if(counter > 0){
-                
+                counter =  counter - 1;
             }
             else{
                 clearInterval(timerInterval);
             }
         }, 1000)
         
-        //check to see if the answer are correct or incorrect
-        for(var i = 0; i < arrayBtn.length; i++){
-            if(dataType[i].userChoices === dataType[i].correctChoice){
-                console.log("this is correct");
-                correct.textContent = "Correct!";
-            }
-            else{
-                console.log("this is wrong");
-                wrong.textContent = "Wrong"; 
-            }
-        }
+        // //check to see if the answer are correct or incorrect
+        // for(var i = 0; i < arrayBtn.length; i++){
+        //     if(dataType[i].userChoices === dataType[i].correctChoice){
+        //         console.log("this is correct");
+        //         correct.textContent = "Correct!";
+        //     }
+        //     else{
+        //         couter = counter -10;
+        //         timerEl.textContent = counter -10;
+        //         console.log("this is wrong");
+        //         wrong.textContent = "Wrong"; 
+        //     }
+        // }
     
      });
    
