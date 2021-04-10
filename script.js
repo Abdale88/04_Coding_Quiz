@@ -18,7 +18,7 @@ body.appendChild(myDiv)
 myDiv.appendChild(correct);
 myDiv.appendChild(wrong);
 
-var counter = 76;
+var counter = 10;
 
 var questionEl = document.querySelector(".question");
 
@@ -28,7 +28,7 @@ var arrayBtn = [btn1, btn2, btn3, btn4];
 var dataType = [
     {
     question: "commonly used data types DO NOT include:",
-    userChoices: ["alert", "booleans", "alert", "numbers"],
+    userChoices: ["string", "booleans", "alert", "numbers"],
     correctChoice: 2,
     },
     {
@@ -65,12 +65,14 @@ function showQuestions(){
     for(var i = 0; i < arrayBtn.length; i++){
         arrayBtn[i].textContent = dataType[questionIndex].userChoices[i];    
     }  
-    console.log(questionIndex);
     questionIndex += 1;     
 }
 
 
-
+btn1.addEventListener("click", showQuestions);
+btn2.addEventListener("click", showQuestions);
+btn3.addEventListener("click", showQuestions);
+btn4.addEventListener("click", showQuestions);
 
 
 // function startButton(){
@@ -86,91 +88,27 @@ function showQuestions(){
             else{
                 clearInterval(timerInterval);
             }
-            
-
-            btn1.addEventListener("click", showQuestions);
-            if(dataType[questionIndex].userChoices === dataType[questionIndex].correctChoice){
-                correct.textContent = "Correct!";
-            }
-            else{
-                wrong.textContent = "Wrong";
-            }
-
-
-            btn2.addEventListener("click", showQuestions);
-            if(dataType[questionIndex+1].userChoices === dataType[questionIndex+1].correctChoice){
-                correct.textContent = "Correct!";
-                console.log(questionIndex+1);
-            }
-            else{
-                wrong.textContent = "Wrong";
-            }
-
-            btn3.addEventListener("click", showQuestions);
-            if(dataType[questionIndex+2].userChoices === dataType[questionIndex+2].correctChoice){
-                correct.textContent = "Correct!";
-            }
-            else{
-                wrong.textContent = "Wrong";
-            }
-               
-                btn4.addEventListener("click", showQuestions);
-                if(dataType[questionIndex+3].userChoices === dataType[questionIndex+3].correctChoice){
-                    correct.textContent = "Correct!";
-                }
-                else{
-                    wrong.textContent = "Wrong";
-                }
         }, 1000)
+        
+        //check to see if the answer are correct or incorrect
+        for(var i = 0; i < arrayBtn.length; i++){
+            if(dataType[i].userChoices === dataType[i].correctChoice){
+                console.log("this is correct");
+                correct.textContent = "Correct!";
+            }
+            else{
+                console.log("this is wrong");
+                wrong.textContent = "Wrong"; 
+            }
+        }
+    
      });
    
+    
 
     // }
     
     // startButton();
 
 
-    // for(var i = 0; i < arrayBtn.length; i++){
-    //     if(dataType[i].userChoices === dataType[i].correctChoice){
-    //         document.write("correct");
-    //         btn2.addEventListener("click", showQuestions)
-    //     }
-    //     else if(dataType[i].userChoices !== dataType[i].correctChoice){
-    //         btn2.addEventListener("click", showQuestions)
-    //     }
-    // }
-
-
-    // timer = setInterval(function(){
-    //     dataFunc();
-        
-    //         timerCount--;
-    //     timerEl.textContent = timerCount;
-    //     var test = document.createElement("div");
-    //      test.textContent = "strings";
-
-    //      console.log("this is dataLi1 >> " + dataLi1.textContent);
-    //    console.log("this is test    >> " + test.textContent);
-
-
-    //     orderDataEl.addEventListener("click", function(){
-    //         if(timerCount > 0 && dataLi1.textContent === test.textContent ){
-                
-    //                 correctAnswer.textContent = "correct true";
-    //         }
-    //         else{
-    //             wrongAnswer.textContent = "wrong weeye";
-    //         }
-    //         clearInterval(timer);
-    //     })
-        // curlyBracketsFunc();
-        // javaArrayFunc()
-        // StringValueFunc()
-        // consoleLogFunc()
-        
-        
-            
-        
-
-    // }, 1000)
     
