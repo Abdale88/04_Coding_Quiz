@@ -30,27 +30,27 @@ var dataType = [
     {
     question: "commonly used data types DO NOT include:",
     userChoices: ["string", "booleans", "alert", "numbers"],
-    correctChoice: 2,
+    correctChoice: "2",
     },
     {
         question: "The condition in an if/else statement is enclosed within____.",
         userChoices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        correctChoice: 2,
+        correctChoice: "2",
     },
     {
         question: "Arrays in JavaScript can be used to store_____.",
         userChoices: ["numbers and strings", "other Arrays", "booleans", "all of the above"],
-        correctChoice: 3,
+        correctChoice: "3",
     },
     {
         question: "String value must be enclosed within ____ when  being assigned to variable.",
         userChoices: ["quotes", "commas", "curly brackets", "parentheses"],
-        correctChoice: 0,
+        correctChoice: "0",
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the ",
         userChoices: ["javaScript", "console.log", "for loop", "terminal/bash"],
-        correctChoice: 1,
+        correctChoice: "1",
     },
 ]
 
@@ -74,13 +74,17 @@ function showQuestions(){
 function choose(event){
     if(event.target.getAttribute("id") !== dataType[questionIndex].correctChoice){
         counter =  counter - 10;
+        console.log("incorrect");
+    }
+    else{
+        console.log("correct");
     }
 }
 
-btn1.addEventListener("click", choose(showQuestions));
-btn2.addEventListener("click", choose(showQuestions));
-btn3.addEventListener("click", choose(showQuestions));
-btn4.addEventListener("click", choose(showQuestions));
+btn1.addEventListener("click", choose());
+btn2.addEventListener("click", choose());
+btn3.addEventListener("click", choose());
+btn4.addEventListener("click", choose());
 
 
 // function startButton(){
