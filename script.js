@@ -29,13 +29,13 @@ var arrayBtn = [btn1, btn2, btn3, btn4];
 var dataType = [
     {
     question: "commonly used data types DO NOT include:",
-    userChoices: ["string", "booleans", "alert", "numbers"],
-    correctChoice: "2",
+    userChoices: ["alert", "booleans", "string", "numbers"],
+    correctChoice: "0",
     },
     {
         question: "The condition in an if/else statement is enclosed within____.",
-        userChoices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        correctChoice: "2",
+        userChoices: ["parentheses", "string", "quotes", "square brackets"],
+        correctChoice: "1",
     },
     {
         question: "Arrays in JavaScript can be used to store_____.",
@@ -44,8 +44,8 @@ var dataType = [
     },
     {
         question: "String value must be enclosed within ____ when  being assigned to variable.",
-        userChoices: ["quotes", "commas", "curly brackets", "parentheses"],
-        correctChoice: "0",
+        userChoices: ["curly brackets", "quotes", "stings", "parentheses"],
+        correctChoice: "1",
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the ",
@@ -54,11 +54,19 @@ var dataType = [
     },
 ]
 
+function choose(event){
+    if(event.target.getAttribute("id") !== dataType[questionIndex].correctChoice){
+        counter =  counter - 10;
+        console.log("incorrect");
+        
+    }
+    else{
+        console.log("correct");
+    }
+}
 
 
 console.log( dataType);
-
-
 
 function showQuestions(){
     questionEl.textContent = dataType[questionIndex].question;
@@ -71,22 +79,17 @@ function showQuestions(){
 
 
 
-function choose(event){
-    if(event.target.getAttribute("id") !== dataType[questionIndex].correctChoice){
-        counter =  counter - 10;
-        console.log("incorrect");
-    }
-    else{
-        console.log("correct");
-    }
-}
 
-btn1.addEventListener("click", choose());
-btn2.addEventListener("click", choose());
-btn3.addEventListener("click", choose());
-btn4.addEventListener("click", choose());
+btn1.addEventListener("click", choose);
+btn2.addEventListener("click", choose);
+btn3.addEventListener("click", choose);
+btn4.addEventListener("click", choose);
 
 
+btn1.addEventListener("click", showQuestions);
+btn2.addEventListener("click", showQuestions);
+btn3.addEventListener("click", showQuestions);
+btn4.addEventListener("click", showQuestions);
 // function startButton(){
     startBtn.addEventListener("click", showQuestions);
      startBtn.addEventListener("click", function(){ 
@@ -95,7 +98,7 @@ btn4.addEventListener("click", choose());
             counter--;
             timerEl.textContent = counter
             if(counter > 0){
-
+                return null;
             }
             else{
                 clearInterval(timerInterval);
@@ -105,27 +108,3 @@ btn4.addEventListener("click", choose());
     
      });
    
-    
-
-
-
-     // //check to see if the answer are correct or incorrect
-        // for(var i = 0; i < arrayBtn.length; i++){
-        //     if(dataType[i].userChoices === dataType[i].correctChoice){
-        //         console.log("this is correct");
-        //         correct.textContent = "Correct!";
-        //     }
-        //     else{
-        //         couter = counter -10;
-        //         timerEl.textContent = counter -10;
-        //         console.log("this is wrong");
-        //         wrong.textContent = "Wrong"; 
-        //     }
-        // }
-
-    // }
-    
-    // startButton();
-
-
-    
