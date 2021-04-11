@@ -18,7 +18,7 @@ body.appendChild(myDiv)
 myDiv.appendChild(correct);
 myDiv.appendChild(wrong);
 
-var counter = 10;
+var counter = 76;
 var timerEl;
 
 var questionEl = document.querySelector(".question");
@@ -68,17 +68,19 @@ function showQuestions(){
     }  
     questionIndex += 1;     
 }
-btn1.addEventListener("click", showQuestions)
-btn1.addEventListener("click", function(event){
-        console.log(event);  
-    
-})
 
 
-btn1.addEventListener("click", showQuestions);
-btn2.addEventListener("click", showQuestions);
-btn3.addEventListener("click", showQuestions);
-btn4.addEventListener("click", showQuestions);
+
+function choose(event){
+    if(event.target.getAttribute("id") !== dataType[questionIndex].correctChoice){
+        counter =  counter - 10;
+    }
+}
+
+btn1.addEventListener("click", choose(showQuestions));
+btn2.addEventListener("click", choose(showQuestions));
+btn3.addEventListener("click", choose(showQuestions));
+btn4.addEventListener("click", choose(showQuestions));
 
 
 // function startButton(){
@@ -89,14 +91,21 @@ btn4.addEventListener("click", showQuestions);
             counter--;
             timerEl.textContent = counter
             if(counter > 0){
-                counter =  counter - 1;
+
             }
             else{
                 clearInterval(timerInterval);
             }
         }, 1000)
         
-        // //check to see if the answer are correct or incorrect
+    
+     });
+   
+    
+
+
+
+     // //check to see if the answer are correct or incorrect
         // for(var i = 0; i < arrayBtn.length; i++){
         //     if(dataType[i].userChoices === dataType[i].correctChoice){
         //         console.log("this is correct");
@@ -109,10 +118,6 @@ btn4.addEventListener("click", showQuestions);
         //         wrong.textContent = "Wrong"; 
         //     }
         // }
-    
-     });
-   
-    
 
     // }
     
